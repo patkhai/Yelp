@@ -2,8 +2,8 @@
 //  Business.swift
 //  Yelp
 //
-//  Created by Timothy Lee on 4/23/15.
-//  Copyright (c) 2015 Timothy Lee. All rights reserved.
+//  Created by Pat Khai on 9/15/18.
+//  Copyright (c) 2018 Pat Khai. All rights reserved.
 //
 
 import UIKit
@@ -116,7 +116,7 @@ class Business: NSObject {
         _ = YelpClient.sharedInstance.searchWithTerm(term, completion: completion)
     }
     
-    class func searchWithTerm(term: String, sort: YelpSortMode?, categories: [String]?, completion: @escaping ([Business]?, Error?) -> Void) -> Void {
+    class func searchWithTerm(term: String, sort: YelpSortMode?, categories: [String]?, limit: Int?, offset: Int?, completion: @escaping ([Business]?, Error?) -> Void) -> Void {
         _ = YelpClient.sharedInstance.searchWithTerm(term, sort: sort, categories: categories, openNow: false, completion: completion)
     }
 }

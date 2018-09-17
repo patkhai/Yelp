@@ -23,15 +23,24 @@ PODS:
   - BDBOAuth1Manager (1.6.0):
     - AFNetworking/NSURLConnection (~> 2.6.0)
     - AFNetworking/NSURLSession (~> 2.6.0)
+  - PKHUD (5.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
   - BDBOAuth1Manager
+  - PKHUD (~> 5.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - BDBOAuth1Manager
+    - PKHUD
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   BDBOAuth1Manager: cd5a5872f355ca38180d52ca2dd844f0b0c84797
+  PKHUD: 62ea46a1e88c4def1da784878d199bb54c841e3c
 
-PODFILE CHECKSUM: e93d023552e6cb9e3bc0b66e42e1d29f24efef97
+PODFILE CHECKSUM: 8a43a4f2d85a728efbc52aab8a13733624ab0bf6
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.5.3

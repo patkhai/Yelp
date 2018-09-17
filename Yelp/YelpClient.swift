@@ -2,8 +2,8 @@
 //  YelpClient.swift
 //  Yelp
 //
-//  Created by Tejen Patel on 6/26/18.
-//  Copyright (c) 2018 CodePath. All rights reserved.
+//  Created by Pat Khai on 9/15/18.
+//  Copyright (c) 2018 Pat Khai. All rights reserved.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ import AFNetworking
 import BDBOAuth1Manager
 
 // You can register for Yelp API keys here: https://www.yelp.com/developers/v3/manage_app
-let yelpAPIKey = "izCFqEx0usiPwAiv_ymJ4Sl2Lr_mpnN6U_VeEkn1iUyEUWLM2Rd76A6NlswCI-HlYVWYT2WYRFtNnD04lgageyBKPJkqDDA75C8UsJYwc7oXWMGDFSCRU93zoTBaW3Yx"
+let yelpAPIKey = "9o6OUun0aeagt17E_w_-4YFm5O18ZtjX14NSC-mrcpkthsX7BY_2U9120xXaRF6pwfu2HVtZpa1fYULlqGp4NcvkfXGrHBcfG4zIDhDrVsDpKh5Eysadv2Bw61-bW3Yx"
 
 enum YelpSortMode: String {
     case best_match, rating, review_count, distance
@@ -35,7 +35,10 @@ class YelpClient: AFHTTPRequestOperationManager {
         let baseUrl = URL(string: "https://api.yelp.com/v3/")
         super.init(baseURL: baseUrl)
         requestSerializer.setValue("Bearer \(self.apiKey!)", forHTTPHeaderField: "Authorization")
+        
     }
+    
+    
     
     func searchWithTerm(_ term: String, completion: @escaping ([Business]?, Error?) -> Void) -> AFHTTPRequestOperation {
         return searchWithTerm(term, sort: nil, categories: nil, openNow: nil, completion: completion)
@@ -71,7 +74,8 @@ class YelpClient: AFHTTPRequestOperationManager {
                             }
                         },
                         failure: { (operation: AFHTTPRequestOperation?, error: Error) -> Void in
-                            completion(nil, error)
+                            completion(nil, UIAlertView() as? Error)
+                          
                         })!
     }
 }
