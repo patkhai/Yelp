@@ -105,8 +105,8 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
-    var limit: Int = 20
-    var offset: Int = 20
+    var limit: Int = 50
+    var offset: Int = 50
     
     // Infinite scrolling setting
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
